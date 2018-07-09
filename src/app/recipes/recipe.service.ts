@@ -26,9 +26,12 @@ export class RecipeService {
       ])
   ];
 
-  constructor(private slService: ShoppingListService) {}
+  constructor(private slService: ShoppingListService) { }
 
   getRecipes() {
+    //"return this.recipes", is a direct reference to the recipes array in the Service
+    // if we change anything in the recipe array it will change in the service as well
+    // slice, it will return a new array
     return this.recipes.slice();
   }
 
